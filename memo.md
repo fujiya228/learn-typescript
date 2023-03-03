@@ -116,3 +116,57 @@ console.log(obj1.foo); // 123
 ```
 
 ※ 他にも色々ある（copy、clone、deep copy、shallow copyなど）
+
+## 3.2.1 オブジェクト型の記法
+
+以下のように、オブジェクトの型を定義できる。
+前半が型、後半がオブジェクトリテラル。
+
+```
+let obj: {
+  foo: number;
+  bar: string;
+} = {
+  foo: 123,
+  bar: 'hello',
+};
+```
+
+## 3.2.3 type文で型に別名をつける
+
+以下のように、型に別名をつけることができる。
+
+```
+type MyObj = {
+  foo: number;
+  bar: string;
+};
+
+let obj: MyObj = {
+  foo: 123,
+  bar: 'hello',
+};
+```
+
+- 別名をつける流ことで、型の定義を共通化できる。
+- 宣言はどこでもいい。（コンパイル時に、型の定義が展開されるため）
+- プリミティブ型にも別名をつけることができる。
+
+## 3.2.4 interface宣言でオブジェクト型を宣言する
+
+以下のように、`interface`を使ってオブジェクト型を宣言できる。
+
+```
+interface MyObj {
+  foo: number;
+  bar: string;
+}
+
+let obj: MyObj = {
+  foo: 123,
+  bar: 'hello',
+};
+```
+
+- `type`と`interface`の違いは、`interface`は拡張できること。
+- `interface`のほとんどは、`type`で代用できる。 => `type`のみを使う流儀もある。
