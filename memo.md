@@ -170,3 +170,44 @@ let obj: MyObj = {
 
 - `type`と`interface`の違いは、`interface`は拡張できること。
 - `interface`のほとんどは、`type`で代用できる。 => `type`のみを使う流儀もある。
+
+## 3.2.5 インデックスシグネチャ
+
+以下のように、インデックスシグネチャを使うことで、任意のプロパティを定義できる。
+
+```
+interface MyObj {
+  foo: number;
+  bar: string;
+  [key: string]: boolean;
+}
+
+let obj: MyObj = {
+  foo: 123,
+  bar: 'hello',
+  baz: true,
+};
+```
+
+- ※TypeScriptが保証する型安全性を破壊することになるので、注意が必要。
+
+## 3.2.6 オプショナルプロパティ
+
+以下のように、`?`をつけることで、オプショナルプロパティを定義できる。
+
+```
+interface MyObj {
+  foo: number;
+  bar?: string;
+}
+
+let obj1: MyObj = {
+  foo: 123,
+};
+
+let obj2: MyObj = {
+  foo: 123,
+  bar: 'hello',
+};
+```
+
