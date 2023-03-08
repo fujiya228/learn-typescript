@@ -176,7 +176,7 @@ let obj: MyObj = {
 以下のように、インデックスシグネチャを使うことで、任意のプロパティを定義できる。
 
 ```
-interface MyObj {
+type MyObj {
   foo: number;
   bar: string;
   [key: string]: boolean;
@@ -196,7 +196,7 @@ let obj: MyObj = {
 以下のように、`?`をつけることで、オプショナルプロパティを定義できる。
 
 ```
-interface MyObj {
+type MyObj {
   foo: number;
   bar?: string;
 }
