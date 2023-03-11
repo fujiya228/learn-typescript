@@ -211,3 +211,32 @@ let obj2: MyObj = {
 };
 ```
 
+
+## 3.2.7 読み取り専用プロパティの宣言
+
+以下のように、`readonly`をつけることで、読み取り専用プロパティを定義できる。
+
+```
+type MyObj {
+  readonly foo: number;
+}
+
+let obj: MyObj = {
+  foo: 123,
+};
+
+obj.foo = 456; // エラー
+```
+
+## 3.2.8 typeofキーワードで変数の型を得る
+
+以下のように、`typeof`を使うことで、変数の型を得ることができる。
+
+```
+let num: number = 123,
+
+type NumType = typeof num; // number
+
+const foo: NumType = 456; // OK
+```
+
