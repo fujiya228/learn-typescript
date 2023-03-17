@@ -8,6 +8,31 @@ hundleSubmitでどうしてもESLintに引っかかるので、ルールを変�
 - https://github.com/react-hook-form/react-hook-form/discussions/8020
 - https://github.com/react-hook-form/react-hook-form/discussions/9325#discussioncomment-4060566
 
+## react-hook-formで`input[number]`の値が未入力の時にnullにしたい
+
+TODO
+
+## データを変換するのはどのタイミングがいいのか？
+
+TODO
+
+## 用語メモ（公式見ればわかるけど、一度自分で理解してアウトプットした方が身につくと思うので）
+
+- Controller
+- watch
+- handleSubmit
+- register
+- setValueAs
+- valueAsNumber
+- valueAsDate
+- setValue
+- useForm
+- transformValue
+- defaultValues
+- resolver
+  - yup
+  - zod
+
 ## 使い方を体系的にまとめたい
 
 TODO
