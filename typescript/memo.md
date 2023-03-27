@@ -291,3 +291,38 @@ const u: User = {
 
 - プログラマーのミスを防ぐためにある
 - オブジェクトリテラルの時のみに発生する
+
+## 3.4.1 型引数を持つ型を宣言する
+
+```
+type User<T> = {
+  name: string,
+  child: T,
+}
+
+// 複数あってもいい
+type Family<Parent, Child> = {
+  mother: Parent,
+  father: Parent,
+  child: Child,
+}
+```
+
+型引数を持つ型をジェネリック型という
+引数指定せずに使おうとするとエラーになる
+
+## 3.4.3 部分型関係による型引数の制約
+
+extendsを利用して、型に制約を持たせることができる
+
+```
+type HasName = {
+  name:string;
+};
+
+type Family<Parent extends HasName, Child extends HasName> = { 
+  mother:Parent;
+  father:Parent;
+  child:Child;
+};
+```
