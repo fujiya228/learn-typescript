@@ -326,3 +326,13 @@ type Family<Parent extends HasName, Child extends HasName> = {
   child:Child;
 };
 ```
+
+## 3.5.4 readonly配列型
+
+内容を書き換えられない配列型
+
+```
+const arr: readonly number[] = [1, 10, 100]
+
+arr[1] = 20; // エラー
+```
