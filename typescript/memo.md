@@ -373,3 +373,64 @@ console.log(num); // undefined
 
 配列の要素を用いるときは代わりにfor-ofを使うと良い。
 を用いるなどすると良い
+
+## 3.6.2 オブジェクトの分割代入（2）ネストしたパターン
+
+ネストしても代入可能
+```
+const obj = {
+  name: 'bob',
+  age: 26,
+  address: {
+    zipCode: '123-4567',
+    prefecture: 'Tokyo',
+    city: 'Shinjuku',
+  },
+}
+
+const { address: { zipCode, prefecture, city } } = obj;
+
+console.log(zipCode); // 123-4567
+console.log(prefecture); // Tokyo
+console.log(city); // Shinjuku
+```
+
+## 3.6.3 配列の分割代入
+
+配列の場合は、インデックスでアクセスすることができる。
+```
+const arr = [1, 10, 100];
+
+const [first, second, third] = arr;
+
+console.log(first); // 1
+console.log(second); // 10
+```
+
+空白を入れることで、スキップすることができる。
+```
+const arr = [1, 10, 100];
+
+const [first, , third] = arr;
+
+console.log(first); // 1
+console.log(third); // 100
+```
+
+## 3.6.4 分割代入のデフォルト値
+
+デフォルト値を設定することができる。
+```
+const obj = {
+  name: 'bob',
+  age: 26,
+}
+
+const { name, age, address = 'Tokyo' } = obj;
+
+console.log(name); // bob
+console.log(age); // 26
+console.log(address); // Tokyo
+```
+
+- デフォルト値は、分割代入の右辺にあるオブジェクトのプロパティが存在しない（undefind）場合にのみ適用される
